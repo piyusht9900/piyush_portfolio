@@ -13,11 +13,13 @@ import Certification from './components/Certification';
 import Education from './components/Education';
 
 function App() {
+  
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100">
      
       
-      <Navbar /> {/* 👈 Add this line */}
+      <Navbar /> {/* 👈 Add this linegit remote remove origin
+ */}
 
       <Hero />
       <About />
