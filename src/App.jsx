@@ -1,5 +1,5 @@
-import React from 'react';
-import Navbar from './components/Navbar'; // 👈 Import here
+import React, { useRef } from 'react';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -13,23 +13,19 @@ import Certification from './components/Certification';
 import Education from './components/Education';
 
 function App() {
-  
+  const contactRef = useRef(null); // 👈 add this
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100">
-     
-      
-      <Navbar /> {/* 👈 Add this linegit remote remove origin
- */}
-
-      <Hero />
+      <Navbar /> 
+      <Hero contactRef={contactRef} /> {/* 👈 pass ref here */}
       <About />
       <Skills />
       <Projects />
       <Experience />
       <Certification />
       <Education />
-      {/* <VideoSection /> */}
-      <Contact />
+      <Contact contactRef={contactRef} /> {/* 👈 and here */}
       <Footer />
     </div>
   );

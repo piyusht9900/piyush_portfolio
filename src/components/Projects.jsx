@@ -26,7 +26,7 @@ export default function Projects() {
         { Icon: SiBootstrap, color: "#7952b3" },
       ],
       bg: "/images/shopify.jpeg",
-      github: "https://github.com/your-username/shopify-project",
+      github: "https://github.com/piyusht9900/shopify.git",
       description:
         "A modern online shopping platform with responsive design, secure cart system, and smooth user experience.",
     },
@@ -39,7 +39,7 @@ export default function Projects() {
         { Icon: SiBootstrap, color: "#7952b3" },
       ],
       bg: "/images/online-electronic-voting_74855-4448.avif",
-      github: "https://github.com/your-username/voting-system",
+      github: "https://github.com/piyusht9900/online_voting_system.git",
       description:
         "Secure electronic voting system with real-time result tracking, voter login, and admin dashboard.",
     },
@@ -53,7 +53,7 @@ export default function Projects() {
         { Icon: SiMqtt, color: "#660066" },
       ],
       bg: "/images/IoT.jpg",
-      github: "https://github.com/your-username/logistics-iot-project",
+      github: "https://github.com/piyusht9900/Iot_based_smart_logistics_system.git",
       description:
         "Real-time logistics monitoring using GPS, RFID, and Firebase with smart vehicle tracking and status updates.",
     },

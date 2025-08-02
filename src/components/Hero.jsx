@@ -10,7 +10,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-export default function Hero() {
+export default function Hero({ contactRef }) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -49,6 +49,7 @@ export default function Hero() {
                   backgroundColor: "white",
                   top: `${Math.random() * 100}%`,
                   left: `${Math.random() * 100}%`,
+                  position: "absolute",
                 }}
               />
             ))}
@@ -60,12 +61,9 @@ export default function Hero() {
         {/* Hero Content */}
         <div className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 z-10">
           <h1 className="pt-20 text-3xl sm:text-4xl md:text-5xl font-bold typing-animation mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
-  Hi, I'm Piyush Thakur
-</h1>
+            Hi, I'm Piyush Thakur
+          </h1>
 
-
-
-          {/* Rotating Subtitle BELOW name */}
           <RotatingTitles />
 
           {/* Contact Info */}
@@ -82,24 +80,30 @@ export default function Hero() {
               <FaMapMarkerAlt className="text-blue-500" />
               Uran, Navi Mumbai
             </p>
-           <br></br>
+            <br />
+
             {/* Buttons */}
             <div className="flex justify-center gap-4 mt-3 flex-wrap">
               <a
-                href="/resume.pdf"
+                href="/public/resume/Piyush_Thakur_Resume.pdf"
                 download
                 className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition"
               >
                 <Download size={16} /> View Resume
               </a>
-              <a
-                href="mailto:m.dinesh.it27@gmail.com"
+
+              <button
+                onClick={() =>
+                  contactRef?.current?.scrollIntoView({ behavior: "smooth" })
+                }
                 className="flex items-center gap-2 border border-blue-500 text-blue-500 hover:bg-blue-900 hover:text-white px-4 py-2 rounded transition"
               >
                 <FaEnvelope /> Contact Me
-              </a>
-            </div >
-            <br></br>
+              </button>
+            </div>
+
+            <br />
+
             {/* Social Icons */}
             <div className="flex justify-center gap-4 mt-4">
               <a
@@ -107,7 +111,6 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-800 dark:text-white bg-white dark:bg-gray-800 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
-
               >
                 <FaGithub className="w-5 h-5" />
               </a>
@@ -115,8 +118,7 @@ export default function Hero() {
                 href="https://linkedin.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-               className="text-blue-600 dark:text-blue-400 bg-white dark:bg-gray-800 p-2 rounded-full hover:bg-blue-100 dark:hover:bg-gray-700"
-
+                className="text-blue-600 dark:text-blue-400 bg-white dark:bg-gray-800 p-2 rounded-full hover:bg-blue-100 dark:hover:bg-gray-700"
               >
                 <FaLinkedin className="w-5 h-5" />
               </a>
@@ -125,7 +127,6 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-pink-600 dark:text-pink-400 bg-white dark:bg-gray-800 p-2 rounded-full hover:bg-pink-100 dark:hover:bg-gray-700"
-
               >
                 <FaInstagram className="w-5 h-5" />
               </a>
@@ -134,7 +135,6 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-green-600 dark:text-green-400 bg-white dark:bg-gray-800 p-2 rounded-full hover:bg-green-100 dark:hover:bg-gray-700"
-
               >
                 <FaWhatsapp className="w-5 h-5" />
               </a>
@@ -143,7 +143,6 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-red-500 dark:text-red-400 bg-white dark:bg-gray-800 p-2 rounded-full hover:bg-red-100 dark:hover:bg-gray-700"
-
               >
                 <FaEnvelope className="w-5 h-5" />
               </a>
@@ -182,12 +181,11 @@ function RotatingTitles() {
 
   return (
     <p
-  className={`text-xl sm:text-2xl md:text-3xl mb-6 transition-opacity duration-500 ${
-    visible ? "opacity-100" : "opacity-0"
-  } text-black dark:text-white`}
->
-  {titles[index]}
-</p>
-
+      className={`text-xl sm:text-2xl md:text-3xl mb-6 transition-opacity duration-500 ${
+        visible ? "opacity-100" : "opacity-0"
+      } text-black dark:text-white`}
+    >
+      {titles[index]}
+    </p>
   );
 }

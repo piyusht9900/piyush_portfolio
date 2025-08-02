@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Mail, Github, Linkedin, User, MessageSquare, Send, Phone } from "lucide-react";
 import emailjs from '@emailjs/browser';
 
-export default function Contact() {
+export default function Contact({ contactRef }) {
   const form = useRef();
   const [isSent, setIsSent] = useState(false);
 
@@ -31,6 +31,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
+      ref={contactRef}
       className="py-16 px-4 text-left text-gray-900 dark:text-white bg-gradient-to-b from-blue-100 to-blue-100 dark:bg-none dark:bg-gray-900"
     >
       <h2 className="text-4xl font-bold mb-10 text-center bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
@@ -42,9 +43,9 @@ export default function Contact() {
         <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md">
           <h3 className="text-2xl font-semibold mb-4">Let's Connect</h3>
           <p className="text-gray-700 dark:text-gray-300 mb-6">
-  I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-  Whether you're a fellow developer, a recruiter, or someone with an idea, feel free to reach out — I'd love to connect and collaborate.
-</p>
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+            Whether you're a fellow developer, a recruiter, or someone with an idea, feel free to reach out — I'd love to connect and collaborate.
+          </p>
 
           <ul className="space-y-4 text-left">
             <li className="flex items-center gap-3"><Phone size={20} /> +91 9321581067</li>
@@ -57,7 +58,6 @@ export default function Contact() {
         {/* Right: Contact Form */}
         <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md">
           <form ref={form} onSubmit={sendEmail} className="space-y-6">
-            {/* Name Input */}
             <div>
               <label className="text-sm font-medium mb-1 block">Name</label>
               <div className="relative">
@@ -72,7 +72,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Email Input */}
             <div>
               <label className="text-sm font-medium mb-1 block">Email</label>
               <div className="relative">
@@ -87,7 +86,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Message Input */}
             <div>
               <label className="text-sm font-medium mb-1 block">Message</label>
               <div className="relative">
@@ -102,7 +100,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
               className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2.5 px-4 rounded-md transition-all"
