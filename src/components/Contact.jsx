@@ -50,7 +50,7 @@ export default function Contact({ contactRef }) {
           <ul className="space-y-4 text-left">
             <li className="flex items-center gap-3"><Phone size={20} /> +91 9321581067</li>
             <li className="flex items-center gap-3"><Mail size={20} /> psthakur4520@gmail.com</li>
-            <li className="flex items-center gap-3"><Github size={20} /> github.com/piyusht</li>
+            <li className="flex items-center gap-3"><Github size={20} />github.com/piyusht9900</li>
             <li className="flex items-center gap-3"><Linkedin size={20} /> linkedin.com/in/piyush-thakur-101650271</li>
           </ul>
         </div>

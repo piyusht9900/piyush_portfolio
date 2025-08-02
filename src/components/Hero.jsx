@@ -107,7 +107,7 @@ export default function Hero({ contactRef }) {
             {/* Social Icons */}
             <div className="flex justify-center gap-4 mt-4">
               <a
-                href="https://github.com/"
+                href="https://github.com/piyusht9900"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-800 dark:text-white bg-white dark:bg-gray-800 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
@@ -115,7 +115,7 @@ export default function Hero({ contactRef }) {
                 <FaGithub className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com/"
+                href="https://www.linkedin.com/in/piyush-thakur-101650271"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 dark:text-blue-400 bg-white dark:bg-gray-800 p-2 rounded-full hover:bg-blue-100 dark:hover:bg-gray-700"
@@ -123,7 +123,7 @@ export default function Hero({ contactRef }) {
                 <FaLinkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com/"
+                href="https://instagram.com/piyushthakur9833"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-pink-600 dark:text-pink-400 bg-white dark:bg-gray-800 p-2 rounded-full hover:bg-pink-100 dark:hover:bg-gray-700"
@@ -131,7 +131,7 @@ export default function Hero({ contactRef }) {
                 <FaInstagram className="w-5 h-5" />
               </a>
               <a
-                href="https://wa.me/918122129450"
+                href="https://wa.me/919321581067"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-green-600 dark:text-green-400 bg-white dark:bg-gray-800 p-2 rounded-full hover:bg-green-100 dark:hover:bg-gray-700"
@@ -139,7 +139,7 @@ export default function Hero({ contactRef }) {
                 <FaWhatsapp className="w-5 h-5" />
               </a>
               <a
-                href="mailto:m.dinesh.it27@gmail.com"
+                href="mailto:psthakur4520@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-red-500 dark:text-red-400 bg-white dark:bg-gray-800 p-2 rounded-full hover:bg-red-100 dark:hover:bg-gray-700"
