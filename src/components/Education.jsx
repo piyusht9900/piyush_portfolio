@@ -15,10 +15,41 @@ const Education = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // trigger on load
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const educationData = [
+    {
+      logo: '/logos/mgm.png',
+      title: 'Bachelor of Engineering in Computer Science',
+      subtitle: 'University of Mumbai, MGM College of Engineering and Technology, Kamothe',
+      date: 'Dec 2021 – May 2025',
+      score: 'CGPA: 8.11',
+      marksheet: '/images/Degree.jpg',
+    },
+    {
+      logo: '/logos/ues.webp',
+      title: 'H.S.C in Science',
+      subtitle: 'Maharashtra State Board, U.E.S Jr College Uran',
+      date: 'July 2019 – March 2021',
+      score: 'Score: 87.17%',
+      marksheet: '/images/HSC Result.jpeg',
+    },
+    {
+      logo: '/logos/ies_logo.png',
+      title: 'Secondary (X)',
+      subtitle: 'Maharashtra State Board, I.E.S JNPT Secondary School, Sheva',
+      date: 'June 2015 – Feb 2018',
+      score: 'Score: 88.40%',
+      marksheet: '/images/SSC Result.jpeg',
+    },
+  ];
+
+  const handleViewMarksheet = (url) => {
+    window.open(url, '_blank');
+  };
 
   return (
     <div
@@ -29,25 +60,7 @@ const Education = () => {
         Education
       </h2>
 
-      {[{
-        logo: '/logos/mgm.png',
-        title: 'Bachelor of Engineering in Computer Science',
-        subtitle: 'University of Mumbai, MGM College of Engineering and Technology, Kamothe',
-        date: 'Dec 2021 – May 2025',
-        score: 'CGPA: 8.11',
-      }, {
-        logo: '/logos/ues.webp',
-        title: 'H.S.C in Science',
-        subtitle: 'Maharashtra State Board, U.E.S Jr College Uran',
-        date: 'July 2019 – March 2021',
-        score: 'Score: 87.17%',
-      }, {
-        logo: '/logos/ies_logo.png',
-        title: 'Secondary (X)',
-        subtitle: 'Maharashtra State Board, I.E.S JNPT Secondary School, Sheva',
-        date: 'June 2015 – Feb 2018',
-        score: 'Score: 88.40%',
-      }].map((item, index) => (
+      {educationData.map((item, index) => (
         <div
           key={index}
           className="edu-card bg-white dark:bg-gray-800 text-left rounded-lg p-6 mb-8 mx-auto max-w-3xl transition-transform duration-300 ease-in-out transform hover:-translate-y-2 hover:opacity-90"
@@ -63,11 +76,19 @@ const Education = () => {
           <div className="edu-content">
             <h2 className="text-xl font-semibold text-gray-800 dark:text-white">{item.title}</h2>
             <p className="text-gray-600 dark:text-gray-300">{item.subtitle}</p>
-            <div className="edu-details text-gray-700 dark:text-gray-400 mt-2">
+            <div className="edu-details text-gray-700 dark:text-gray-400 mt-2 mb-4">
               <span>{item.date}</span>
               <br />
               <span className="edu-score font-medium text-blue-500">{item.score}</span>
             </div>
+
+            {/* View Marksheet Button */}
+            <button
+              onClick={() => handleViewMarksheet(item.marksheet)}
+              className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md text-sm font-medium shadow-md transition duration-300"
+            >
+              View Marksheet
+            </button>
           </div>
         </div>
       ))}

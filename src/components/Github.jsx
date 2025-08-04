@@ -6,9 +6,9 @@ const Github = () => {
     username: "Piyush Thakur",
     handle: "@piyusht9900",
     description:
-      "Founder & Designer • Web Developer • B.E  • DSA • JAVA ",
-    followers: 17,
-    repos: 57,
+      "Software Engineer • Web Developer • B.E  • DSA • JAVA ",
+    followers: 1,
+    repos: 4,
     projects: [
       {
         name: "shopify",
@@ -16,7 +16,7 @@ const Github = () => {
           "A modern online shopping platform with responsive design, secure cart system, and smooth user experience.",
         stars: 7,
         forks: 0,
-        language: "CSS",
+        language: "React",
       },
       {
         name: "piyush_portfolio",
@@ -24,7 +24,7 @@ const Github = () => {
           "Personal portfolio website built with HTML, CSS, and JavaScript. Features modern design, responsive layout, and dynamic interactions.",
         stars: 7,
         forks: 0,
-        language: "CSS",
+        language: "React",
       },
       {
         name: "online_voting_system",
@@ -40,7 +40,7 @@ const Github = () => {
           "Real-time logistics monitoring using GPS, RFID, and Firebase with smart vehicle tracking and status updates.",
         stars: 10,
         forks: 1,
-        language: "Jupyter Notebook",
+        language: "IoT",
       },
     ],
   };
@@ -48,23 +48,21 @@ const Github = () => {
   return (
     <section
       id="github"
-      className="scroll-mt-24 pt-10 py-16 px-4 text-left text-gray-900 dark:text-white bg-gradient-to-b from-blue-100 to-blue-100 dark:from-gray-900 dark:to-gray-900"
-      
+      className="scroll-mt-24 pt-8 pb-10 px-4 text-left text-gray-900 dark:text-white bg-gradient-to-b from-blue-100 to-blue-100 dark:from-gray-900 dark:to-gray-900"
     >
-        <h2 className="text-4xl text-center font-bold mb-10 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+      <h2 className="text-4xl text-center font-bold mb-10 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
         Github Contributions
       </h2>
 
-      <div className="min-h-screen text-inherit font-sans">
+      <div className="text-inherit font-sans">
         <div className="max-w-5xl mx-auto">
           {/* Projects */}
           <div className="grid md:grid-cols-2 gap-6 mb-10">
             {githubData.projects.map((project, idx) => (
               <div
-  key={idx}
-  className="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-[0_10px_25px_rgba(96,165,250,0.25),_0_6px_10px_rgba(168,85,247,0.2)] hover:scale-[1.02] transition-all duration-0 ease-in-out hover:dark:bg-[#1f2937]"
->
-
+                key={idx}
+                className="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-[0_10px_25px_rgba(96,165,250,0.25),_0_6px_10px_rgba(168,85,247,0.2)] hover:scale-[1.02] transition-all duration-0 ease-in-out hover:dark:bg-[#1f2937]"
+              >
                 <h3 className="text-blue-600 dark:text-blue-400 text-lg font-semibold mb-2">
                   {project.name}
                 </h3>
@@ -89,8 +87,7 @@ const Github = () => {
           </div>
 
           {/* Profile Footer */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-[0_10px_25px_rgba(96,165,250,0.25),_0_6px_10px_rgba(168,85,247,0.2)] hover:scale-[1.02] transition-all duration-0 ease-in-out hover:dark:bg-[#1f2937]"
->
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-[0_10px_25px_rgba(96,165,250,0.25),_0_6px_10px_rgba(168,85,247,0.2)] hover:scale-[1.02] transition-all duration-0 ease-in-out hover:dark:bg-[#1f2937]">
             <div className="flex items-center gap-4">
               <img
                 src="public/images/letter-p.png"
@@ -120,10 +117,10 @@ const Github = () => {
               </div>
               <div className="ml-auto">
                 <a href="https://github.com/piyusht9900">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md transition duration-300">
-                  View Profile
-                </button></a>
-                
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md transition duration-300">
+                    View Profile
+                  </button>
+                </a>
               </div>
             </div>
           </div>

@@ -72,7 +72,7 @@ export default function Projects() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="rounded-xl overflow-hidden bg-white dark:bg-gray-800 transform transition duration-300 hover:scale-105"
+            className="rounded-xl overflow-hidden bg-white dark:bg-gray-800 transform transition duration-0 hover:scale-105"
             style={{
               boxShadow:
                 "0 10px 25px rgba(96, 165, 250, 0.25), 0 6px 10px rgba(168, 85, 247, 0.2)",

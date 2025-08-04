@@ -3,43 +3,47 @@ import React, { useRef, useEffect } from 'react';
 const Certification = () => {
   const scrollRef = useRef(null);
 
-  // Auto-scroll every 3 seconds (smoothly)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (scrollRef.current) {
-        scrollRef.current.scrollBy({
-          left: 400,
-          behavior: 'smooth',
-        });
-      }
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      const scrollAmount = direction === 'left' ? -400 : 400;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
-
   const certificates = [
     { id: 1, image: '/images/cert1.jpg' },
     { id: 2, image: '/images/cert2.jpg' },
-    { id: 3, image: '/images/cert1.jpg' },
-    { id: 4, image: '/images/cert2.jpg' },
-    { id: 5, image: '/images/cert1.jpg' },
+    { id: 3, image: '/images/cert3.jpg' },
+    { id: 4, image: '/images/cert4.jpg' },
+    { id: 5, image: '/images/cert5.jpg' },
+    { id: 6, image: '/images/cert6.jpg' },
   ];
+
+  useEffect(() => {
+    const scrollInterval = setInterval(() => {
+      if (!scrollRef.current) return;
+
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+
+      // If at end, scroll back to start
+      if (scrollLeft + clientWidth >= scrollWidth - 10) {
+        scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+      }
+    }, 3000);
+
+    return () => clearInterval(scrollInterval);
+  }, []);
+
+  const scroll = (direction) => {
+    if (!scrollRef.current) return;
+    const scrollAmount = direction === 'left' ? -400 : 400;
+    scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  };
 
   return (
     <div
       id="certification"
-      className="py-16 px-4 text-center text-gray-900 dark:text-white bg-blue-100 dark:bg-gray-900 transition-colors duration-500"
+      className="py-16 px-4 text-center text-gray-900 dark:text-white bg-blue-100 dark:bg-gray-900 transition-colors duration-0"
     >
       <h2 className="text-4xl font-bold mb-10 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
         Certification
       </h2>
+
       <div className="relative max-w-screen-xl mx-auto flex items-center">
         {/* Left Arrow */}
         <button
@@ -49,7 +53,7 @@ const Certification = () => {
           &#8592;
         </button>
 
-        {/* Scrollable certificate cards */}
+        {/* Scrollable Cards */}
         <div
           ref={scrollRef}
           className="hide-scrollbar flex space-x-6 px-4 py-4 overflow-x-auto scroll-smooth"
