@@ -159,7 +159,6 @@ function RotatingTitles() {
   const titles = [
     "Full-Stack Developer",
     "React Developer",
-    "Node.js Enthusiast",
     "UI Designer",
     "Tech Explorer",
   ];
