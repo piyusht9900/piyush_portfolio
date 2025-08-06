@@ -23,7 +23,8 @@ const Certification = () => {
       if (scrollLeft + clientWidth >= scrollWidth - 10) {
         scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+        // Scroll by exactly one viewport (one card on mobile)
+        scrollRef.current.scrollBy({ left: clientWidth, behavior: 'smooth' });
       }
     }, 3000);
 
@@ -32,7 +33,8 @@ const Certification = () => {
 
   const scroll = (direction) => {
     if (!scrollRef.current) return;
-    const scrollAmount = direction === 'left' ? -400 : 400;
+    const { clientWidth } = scrollRef.current;
+    const scrollAmount = direction === 'left' ? -clientWidth : clientWidth;
     scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   };
 
@@ -46,10 +48,11 @@ const Certification = () => {
       </h2>
 
       <div className="relative max-w-screen-xl mx-auto flex items-center">
-        {/* Left Arrow */}
+        {/* Left Arrow (now visible on mobile too) */}
         <button
           onClick={() => scroll('left')}
-          className="text-4xl text-blue-500 hover:text-purple-500 mr-4 bg-transparent border-none outline-none"
+          className="block text-4xl text-blue-500 hover:text-purple-500 mr-4 bg-transparent border-none outline-none"
+          aria-label="Scroll left"
         >
           &#8592;
         </button>
@@ -57,12 +60,26 @@ const Certification = () => {
         {/* Scrollable Cards */}
         <div
           ref={scrollRef}
-          className="hide-scrollbar flex space-x-6 px-4 py-4 overflow-x-auto scroll-smooth"
+          className="
+            hide-scrollbar flex overflow-x-auto scroll-smooth
+            snap-x snap-mandatory
+            px-0 sm:px-4 py-4
+            space-x-0 sm:space-x-6
+            w-full
+          "
         >
           {certificates.map((cert) => (
             <div
               key={cert.id}
-              className="min-w-[370px] max-w-[370px] h-[250px] flex-shrink-0 bg-white dark:bg-gray-800 rounded-xl overflow-hidden transform transition hover:scale-105"
+              className="
+                min-w-full w-full                /* mobile: one full card per viewport */
+                sm:min-w-[370px] sm:max-w-[370px] sm:w-auto   /* desktop sizes */
+                h-auto sm:h-[250px]
+                max-h-[80vh]
+                snap-center
+                flex-shrink-0 bg-white dark:bg-gray-800 
+                rounded-xl overflow-hidden transform transition hover:scale-105
+              "
               style={{
                 boxShadow:
                   '0 10px 25px rgba(96, 165, 250, 0.25), 0 6px 10px rgba(168, 85, 247, 0.2)',
@@ -71,16 +88,17 @@ const Certification = () => {
               <img
                 src={cert.image}
                 alt={`Certificate ${cert.id}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
           ))}
         </div>
 
-        {/* Right Arrow */}
+        {/* Right Arrow (now visible on mobile too) */}
         <button
           onClick={() => scroll('right')}
-          className="text-4xl text-blue-500 hover:text-purple-500 ml-4 bg-transparent border-none outline-none"
+          className="block text-4xl text-blue-500 hover:text-purple-500 ml-4 bg-transparent border-none outline-none"
+          aria-label="Scroll right"
         >
           &#8594;
         </button>
