@@ -90,7 +90,7 @@ const Github = () => {
           <div className="bg-white dark:bg-gray-800 rounded-lg p-5 shadow-[0_10px_25px_rgba(96,165,250,0.25),_0_6px_10px_rgba(168,85,247,0.2)] hover:scale-[1.02] transition-all duration-0 ease-in-out hover:dark:bg-[#1f2937]">
             <div className="flex items-center gap-4">
               <img
-                src="public/images/letter-p.png"
+                src="/images/letter-p.png"
                 alt="profile"
                 className="w-14 h-14 rounded-full border border-gray-300 dark:border-gray-600"
               />
