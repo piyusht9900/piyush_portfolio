@@ -4,12 +4,13 @@ const Certification = () => {
   const scrollRef = useRef(null);
 
   const certificates = [
-    { id: 1, image: '/images/cert1.jpg' },
-    { id: 2, image: '/images/cert2.jpg' },
-    { id: 3, image: '/images/cert3.jpg' },
-    { id: 4, image: '/images/cert4.jpg' },
-    { id: 5, image: '/images/cert5.jpg' },
-    { id: 6, image: '/images/cert6.jpg' },
+    { id: 1, image: '/images/cert7.jpg' },
+    { id: 2, image: '/images/cert1.jpg' },
+    { id: 3, image: '/images/cert2.jpg' },
+    { id: 4, image: '/images/cert3.jpg' },
+    { id: 5, image: '/images/cert4.jpg' },
+    { id: 6, image: '/images/cert5.jpg' },
+    { id: 7, image: '/images/cert6.jpg' },
   ];
 
   useEffect(() => {
