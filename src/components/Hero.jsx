@@ -85,7 +85,7 @@ export default function Hero({ contactRef }) {
             {/* Buttons */}
             <div className="flex justify-center gap-4 mt-3 flex-wrap">
               <a
-                href="/public/resume/Piyush_Thakur_Resume.pdf"
+                href="/resume/PIYUSH THAKUR_2025.pdf"
                 download
                 className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition"
               >
